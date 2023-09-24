@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            height: 100vh;
+        }
+
+        h1 {
+            /* AK_logo */
+            text-align: center;
+            background-color: blueviolet;
+            color: white;
+            padding: 10px 0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        /* Dark mode */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #333;
+                color: #fff;
+            }
+
+            .container {
+                background-color: #444;
+            }
+
+            .input-group label {
+                color: #ccc;
+            }
+
+            .input-group input {
+                color: #fff;
+                border-color: #666;
+            }
+
+            .btn {
+                background-color: #555;
+            }
+
+            .btn:hover {
+                background-color: #444;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Admit Kard</h1>
+        <h2>Login</h2>
+        <form id="sendOtpForm">
+
+            {% csrf_token %}
+          
+            <input type="tel" id="phoneNumber" name="phoneNumber">
+          
+            <button type="submit">Send OTP</button>
+            
+            {% if error %}
+              <p>{{ error }}</p>
+            {% endif %}
+          
+          </form>
+          
+          
+    </div>
+</body>
+</html>
